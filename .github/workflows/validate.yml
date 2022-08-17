@@ -1,0 +1,10 @@
+name: Caller Workflow test
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  workflow-calling:
+    uses: ./.github/workflows/testUnit.yml@master
