@@ -21,4 +21,8 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}   
 
       - name: Unit Tests
-        run: dotnet test */*.sln  
+        run: |
+          if find ./  -name "*.sln" ; then
+          dotnet test */*.sln  
+          else
+          dotnet test */*.csproj            
