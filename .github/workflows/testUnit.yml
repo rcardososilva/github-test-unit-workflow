@@ -22,8 +22,11 @@ jobs:
 
       - name: Unit Tests
         run: |
-          if find ./  -name "*.sln" ; then
-          dotnet test */*.sln  
+          if [ $(find -maxdepth 2 -iname *.sln) ]; then
+              echo "arquivo/diretório Existe"
+              dotnet test */*.sln
           else
-          dotnet test */*.csproj            
+              echo "arquivo/diretório Não existe"
+              dotnet test /
+          fi        
         shell: bash  
