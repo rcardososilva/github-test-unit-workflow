@@ -7,4 +7,4 @@ on:
 
 jobs:
   workflow-calling:
-    uses: ./.github/workflows/testUnit.yml@master
+    uses: ./.github/workflows/testUnit.yml
